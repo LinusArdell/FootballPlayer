@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PemainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('pemain',PemainController::class);
+Route::resource('klubAsal',PemainController::class);
+Route::resource('klubBola',PemainController::class);
