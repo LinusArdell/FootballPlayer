@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class KlubBola extends Model
 {
-    protected $table = "Klub_bola";
+    protected $table = "KlubBola";
     use HasFactory, HasUuids;
 
     public function negara(){
-        return $this->belongsTo(Negara::class, 'neagra_id');
+        return $this->belongsTo(Negara::class, 'negara_id');
     }
 }

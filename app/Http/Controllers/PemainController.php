@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\KlubBola;
 use App\Models\Pemain;
 use Illuminate\Http\Request;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class PemainController extends Controller
 {
@@ -35,7 +36,22 @@ class PemainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validasi = $request->validate([
+            'nama' => 'required',
+            'nomor_punggung' => 'required',
+            'posisi' => 'required',
+            'foto' => 'required',
+            'klub_id' => 'required'
+        ]);
+
+        $pemain = new Pemain();
+        $pemain->nama = $validasi['nama'];
+        $pemain->nomor_punggung = $validasi['nomor_punggung'];
+        $pemain->posisi = $validasi['posisi'];
+        $pemain->klub_id = $validasi['klub_id'];
+
+        $pemain->foto = $validasi['foto'];
+        return redirect()->route('')->with('success', "data pemain ".$validasi["nama"]." berhasil ditambahkan");
     }
 
     /**
@@ -65,8 +81,9 @@ class PemainController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Pemain $pemain)
     {
-        //
+        $pemain->delete;
+        return redirect()->route('')->with('success', 'Data berhasil dihapus');
     }
 }

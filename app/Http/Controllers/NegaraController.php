@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Negara;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class NegaraController extends Controller
@@ -11,7 +13,8 @@ class NegaraController extends Controller
      */
     public function index()
     {
-        //
+        $data = Negara::all();
+        return view('negara.index.disini')->with('dataNegara', $data);
     }
 
     /**
@@ -19,7 +22,7 @@ class NegaraController extends Controller
      */
     public function create()
     {
-        //
+        return View('view.negara.create.disini');
     }
 
     /**
@@ -27,7 +30,17 @@ class NegaraController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validasi = $request->validate([
+            'negara' => 'required',
+            'bendera' => 'required'
+        ]);
+
+        $negara = new Negara();
+        $negara->negara = $validasi['negara'];
+        $negara->bendera = $validasi['bendera'];
+        $negara->save();
+
+        return redirect()->route('fakultas.index.disini')->with('success', "data neagra ".$validasi['negara']." berhasil disimpan");
     }
 
     /**
