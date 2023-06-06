@@ -14,16 +14,16 @@
     <title>Elegant Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/elegant-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
     <!-- This page CSS -->
     <!-- chartist CSS -->
-    <link href="{{ asset('../assets/node_modules/morrisjs/morris.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/node_modules/morrisjs/morris.css') }}" rel="stylesheet">
     <!--c3 plugins CSS -->
-    <link href="{{ asset('../assets/node_modules/c3-master/c3.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/node_modules/c3-master/c3.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{ asset('dist/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('html/dist/css/style.css') }}" rel="stylesheet">
     <!-- Dashboard 1 Page CSS -->
-    <link href="{{ asset('dist/css/pages/dashboard1.css') }}" rel="stylesheet">
+    <link href="{{ asset('html/dist/css/pages/dashboard1.css') }}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -59,16 +59,16 @@
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('assets/images/logo-icon.png') }}" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="../assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            <img src="{{ asset('assets/images/logo-light-icon.png') }}" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                             <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('assets/images/logo-text.png') }}/" alt="homepage" class="dark-logo" />
                             <!-- Light Logo text -->
-                            <img src="../assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span>
+                            <img src="{{ asset('assets/images/logo-light-text.png') }}" class="light-logo" alt="homepage" /></span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
@@ -100,7 +100,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="../assets/images/users/1.jpg" alt="user" class="img-circle" width="30"></a>
+                                    src="{{ asset('assets/images/users/1.jpg') }}/" alt="user" class="img-circle" width="30"></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -118,7 +118,7 @@
 
         <aside class="left-sidebar">
             <div class="d-flex no-block nav-text-box align-items-center">
-                <span><img src="../assets/images/logo-icon.png" alt="elegant admin template"></span>
+                <span><img src="{{ asset('assets/images/logo-icon.png') }}" alt="elegant admin template"></span>
                 <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i
                         class="ti-menu"></i></a>
                 <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i
@@ -178,30 +178,30 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{ asset('') }}../assets/node_modules/jquery/jquery-3.2.1.min.js"></script>
+    <script src="{{ asset('assets/node_modules/jquery/jquery-3.2.1.min.js') }}"></script>
     <!-- Bootstrap popper Core JavaScript -->
-    <script src="../assets/node_modules/popper/popper.min.js"></script>
-    <script src="../assets/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('assets/node_modules/popper/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="dist/js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="{{ asset('html/dist/js/perfect-scrollbar.jquery.min.js') }}"></script>
     <!--Wave Effects -->
-    <script src="dist/js/waves.js"></script>
+    <script src="{{ asset('html/dist/js/waves.js') }}"></script>
     <!--Menu sidebar -->
-    <script src="dist/js/sidebarmenu.js"></script>
+    <script src="{{ asset('html/dist/js/sidebarmenu.js') }}"></script>
     <!--Custom JavaScript -->
-    <script src="dist/js/custom.min.js"></script>
+    <script src="{{ asset('html/dist/js/custom.min.js') }}"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
     <!--morris JavaScript -->
-    <script src="../assets/node_modules/raphael/raphael-min.js"></script>
-    <script src="../assets/node_modules/morrisjs/morris.min.js"></script>
-    <script src="../assets/node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="{{ asset('assets/node_modules/raphael/raphael-min.js') }}"></script>
+    <script src="{{ asset('assets/node_modules/morrisjs/morris.min.js') }}"></script>
+    <script src="{{ asset('assets/node_modules/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
     <!--c3 JavaScript -->
-    <script src="../assets/node_modules/d3/d3.min.js"></script>
-    <script src="../assets/node_modules/c3-master/c3.min.js"></script>
+    <script src="{{ asset('assets/node_modules/d3/d3.min.js') }}"></script>
+    <script src="{{ asset('assets/node_modules/c3-master/c3.min.js') }}"></script>
     <!-- Chart JS -->
-    <script src="dist/js/dashboard1.js"></script>
+    <script src="{{ asset('html/dist/js/dashboard1.js') }}"></script>
 </body>
 
 </html>
