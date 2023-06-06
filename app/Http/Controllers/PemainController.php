@@ -9,9 +9,12 @@ class PemainController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $keyword = $request->query('search');
+        if ($keyword){
+            $pemain = pema
+        }
     }
 
     /**
