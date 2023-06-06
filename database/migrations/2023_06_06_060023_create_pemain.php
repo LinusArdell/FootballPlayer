@@ -12,11 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pemain', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id();
             $table->string('nama');
             $table->string('nomor-punggung');
             $table->string('posisi');
             $table->string('foto');
+            $table->unsignedBigInteger('klub_id');
+            $table->foreign('klub_id')->references('id')->on('klub_bola');
             $table->timestamps();
         });
     }
