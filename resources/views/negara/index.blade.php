@@ -1,8 +1,7 @@
-
-      @extends('layout.main')
+@extends('layout.main')
 @section('Judul')
     Daftar Pemain
 @endsection
       @section('content')
-        <h1>Pemain Bola</h1>
+        <h1>Negara</h1>
         @endsection

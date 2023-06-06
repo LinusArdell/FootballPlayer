@@ -14,7 +14,7 @@ class NegaraController extends Controller
     public function index()
     {
         $data = Negara::all();
-        return view('negara.index.disini')->with('dataNegara', $data);
+        return view('negara.index')->with('dataNegara', $data);
     }
 
     /**
@@ -22,7 +22,7 @@ class NegaraController extends Controller
      */
     public function create()
     {
-        return View('view.negara.create.disini');
+        return View('negara.create');
     }
 
     /**
@@ -40,7 +40,7 @@ class NegaraController extends Controller
         $negara->bendera = $validasi['bendera'];
         $negara->save();
 
-        return redirect()->route('fakultas.index.disini')->with('success', "data neagra ".$validasi['negara']." berhasil disimpan");
+        return redirect()->route('negara.index')->with('success', "data neagra ".$validasi['negara']." berhasil disimpan");
     }
 
     /**

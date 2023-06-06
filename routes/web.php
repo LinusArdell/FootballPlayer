@@ -21,5 +21,5 @@ Route::get('/', function () {
 });
 
 Route::resource('pemain',PemainController::class);
-Route::resource('klub', KlubBolaController::class);
+Route::resource('klub-bola', KlubBolaController::class);
 Route::resource('negara', NegaraController::class);

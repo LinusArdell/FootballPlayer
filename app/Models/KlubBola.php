@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class KlubBola extends Model
 {
-    protected $table = "KlubBola";
+    protected $table = "klub_bola";
     use HasFactory, HasUuids;
 
     public function negara(){

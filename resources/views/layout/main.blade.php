@@ -66,7 +66,7 @@
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                             <!-- dark Logo text -->
-                            <img src="{{ asset('assets/images/logo-text.png') }}/" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('assets/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
                             <!-- Light Logo text -->
                             <img src="{{ asset('assets/images/logo-light-text.png') }}" class="light-logo" alt="homepage" /></span>
                     </a>
@@ -82,25 +82,25 @@
                         <!-- This is  -->
                         <li class="nav-item hidden-sm-up"> <a class="nav-link nav-toggler waves-effect waves-light"
                                 href="javascript:void(0)"><i class="ti-menu"></i></a></li>
-                        <!-- ============================================================== -->
+<!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
                         <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                                href="javascript:void(0)"><i class="fa fa-search"></i></a>
-                            <form class="app-search">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
-                                    class="srh-btn"><i class="fa fa-times"></i></a>
-                            </form>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav my-lg-0">
+                            href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                        <form class="app-search">
+                            <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
+                                class="srh-btn"><i class="fa fa-times"></i></a>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="navbar-nav my-lg-0">
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
-                                    src="{{ asset('assets/images/users/1.jpg') }}/" alt="user" class="img-circle" width="30"></a>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img   src="{{ asset('assets/images/users/1.jpg') }}" alt="user" class="img-circle" width="30" /></a>
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -129,19 +129,19 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="index.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{ asset('html/index.html') }}" aria-expanded="false"><i
                                     class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="{{ url('pemain') }}" aria-expanded="false"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Pemain</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="{{ url('klubBola') }}" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{ url('klub-bola') }}" aria-expanded="false"><i
                                     class="fa fa-table"></i><span class="hide-menu"></span>Klub Bola</a></li>
-                        <li> <a class="waves-effect waves-dark" href="icon-fontawesome.html" aria-expanded="false"><i
-                                    class="fa fa-smile-o"></i><span class="hide-menu"></span>Icon</a></li>
-                        <li> <a class="waves-effect waves-dark" href="map-google.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{url('negara') }}" aria-expanded="false"><i
+                                    class="fa fa-smile-o"></i><span class="hide-menu"></span>Negara</a></li>
+                        <li> <a class="waves-effect waves-dark" href="{{ asset('html/map-google.html') }}" aria-expanded="false"><i
                                     class="fa fa-globe"></i><span class="hide-menu"></span>Map</a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-blank.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{ asset('html/pages-blank.html') }}" aria-expanded="false"><i
                                     class="fa fa-bookmark-o"></i><span class="hide-menu"></span>Blank</a></li>
-                        <li> <a class="waves-effect waves-dark" href="pages-error-404.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{ asset('html/pages-error-404.html') }}" aria-expanded="false"><i
                                     class="fa fa-question-circle"></i><span class="hide-menu"></span>404</a></li>
                         <div class="text-center m-t-30">
                             <a href="https://wrappixel.com/templates/elegant-admin/"
@@ -156,9 +156,30 @@
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
-
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h4 class="text-themecolor">@yield('Judul')</h4>
+                    </div>
+                    <div class="col-md-7 align-self-center text-right">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                                <li class="breadcrumb-item active">@yield('Judul')</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
 
         @yield('content')
+
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->

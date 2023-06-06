@@ -14,7 +14,7 @@ class KlubBolaController extends Controller
     public function index()
     {
         $klub = KlubBola::all();
-        return view('klub.index.disini')->with('klub_bola', $klub);
+        return view('klub_bola.index')->with('klub_bola', $klub);
     }
 
     /**
@@ -23,7 +23,7 @@ class KlubBolaController extends Controller
     public function create()
     {
         $negara = Negara::orderBy('negara', 'ASC')->get();
-        return view('klub.create.disni')->with('negara', $negara);
+        return view('klub_bola.create')->with('negara', $negara);
     }
 
     /**
@@ -44,7 +44,7 @@ class KlubBolaController extends Controller
         $klub->logo = $validasi['logo'];
         $klub->save();
 
-        return redirect()->route('klub.index')->with('success', "data klub ".$validasi["nama_klub"]." berhasil disimpan");
+        return redirect()->route('klub_bola.index')->with('success', "data klub ".$validasi["nama_klub"]." berhasil disimpan");
     }
 
     /**
