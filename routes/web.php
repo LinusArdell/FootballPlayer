@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KlubBolaController;
+use App\Http\Controllers\NegaraController;
 use App\Http\Controllers\PemainController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +21,5 @@ Route::get('/', function () {
 });
 
 Route::resource('pemain',PemainController::class);
-Route::resource('klubAsal',PemainController::class);
-Route::resource('klubBola',PemainController::class);
+Route::resource('klub', KlubBolaController::class);
+Route::resource('negara', NegaraController::class);
