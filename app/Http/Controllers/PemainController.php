@@ -19,7 +19,7 @@ class PemainController extends Controller
         //     $pemain = Pemain::where('nama,')
         // }
 
-        return view('')->with('pemain');
+        return view('pemain.index')->with('pemain');
     }
 
     /**
@@ -28,7 +28,7 @@ class PemainController extends Controller
     public function create()
     {
         $klub_bola = KlubBola::class;
-        return view('')->with('klub_bola', $klub_bola);
+        return view('pemain.create')->with('klub_bola', $klub_bola);
     }
 
     /**
