@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\modelPlayer;
 use Illuminate\Http\Request;
 
 class PemainController extends Controller
@@ -13,7 +14,7 @@ class PemainController extends Controller
     {
         $keyword = $request->query('search');
         if ($keyword){
-            $pemain = pema
+            $pemain = modelPlayer::where
         }
     }
 
