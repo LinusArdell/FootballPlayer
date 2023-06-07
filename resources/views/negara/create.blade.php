@@ -8,6 +8,12 @@
 
  @section('content')
 
+
+
+ <!-- ============================================================== -->
+<!--                    Batas Suci          content Showing -->
+
+<div class="col">
 <div class="col-md-6 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
@@ -25,6 +31,9 @@
           @csrf
         </div>
     </div>
+    </div>
+
+    <div class="col-md-6 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
 
@@ -46,12 +55,12 @@
             @enderror
 
           </div>
-          <button type="submit" class="btn btn-primary me-2">Submit</button>
-          <a href="{{ route('pemain.index') }}" class="btn btn-light">Cancel</button>
+          <button type="submit" class="btn btn-primary me-2">Simpan</button>
+          <a href="{{ route('negara.index') }}" class="btn btn-light">Batal</a>
         </form>
     </div>
     </div>
-  </div>
-
+</div>
+</div>
 
               @endsection
