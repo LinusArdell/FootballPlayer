@@ -166,14 +166,14 @@
                 <!-- ============================================================== -->
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
-                        <h4 class="text-themecolor">@yield('Judul')</h4>
+                        <h4 class="text-themecolor">@yield('subJudul')</h4>
                     </div>
                     <div class="col-md-7 align-self-center text-right">
                         <div class="d-flex justify-content-end align-items-center">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                                <li class="breadcrumb-item active">@yield('Judul')</li>
-
+                                <li class="breadcrumb-item"><a href=""> @yield('Judul')</a></li>
+                                <li class="breadcrumb-item active">@yield('subJudul')</li>
                             </ol>
                         </div>
                     </div>
@@ -188,7 +188,7 @@
         <!-- footer -->
         <!-- ============================================================== -->
         <footer class="footer">
-            © 2023 The Suockeer <a href="https://www.wrappixel.com/">wrappixel.com</a>
+            © 2020 The Suockeer.web.hd <a href="https://www.wrappixel.com/">wrappixel.com</a>
         </footer>
         <!-- ============================================================== -->
         <!-- End footer -->
