@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Negara extends Model
 {
-    protected $table = "negara";
     use HasFactory, HasUuids;
 
     public function klub_bola(){

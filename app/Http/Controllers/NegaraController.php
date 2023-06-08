@@ -31,16 +31,16 @@ class NegaraController extends Controller
     public function store(Request $request)
     {
         $validasi = $request->validate([
-            'negara' => 'required',
+            'nama_negara' => 'required',
             'bendera' => 'required'
         ]);
 
-        $negara = new Negara();
-        $negara->negara = $validasi['negara'];
-        $negara->bendera = $validasi['bendera'];
-        $negara->save();
+        $negaras = new Negara();
+        $negaras->nama_negara = $validasi['nama_negara'];
+        $negaras->bendera = $validasi['bendera'];
+        $negaras->save();
 
-        return redirect()->route('negara.index')->with('success', "data neagra ".$validasi['negara']." berhasil disimpan");
+        return redirect()->route('negara.index')->with('success', "data negara ".$validasi['nama_negara']." berhasil disimpan");
     }
 
     /**

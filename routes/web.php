@@ -20,6 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('pemain',PemainController::class);
-Route::resource('klub-bola', KlubBolaController::class);
-Route::resource('negara', NegaraController::class);
+// Route::resource('pemain',PemainController::class);
+// Route::resource();
+// Route::resource('negara', NegaraController::class);
