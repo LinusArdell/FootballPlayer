@@ -17,7 +17,7 @@
             <a href="{{ route('pemain.create') }}" class="btn btn-primary">Tambah</a>
 
             {{-- @if (count($pemain)!=0)<
-                <button class="btn btn-danger" id="multi-delete" data-route="{{ route('mhs-multi-delete') }}">Delete All Selected</button>
+                <button class="btn btn-danger" id="multi-delete" data-route="">Delete All Selected</button>
             @endif --}}
 
 
@@ -31,18 +31,16 @@
                         <th>Posisi</th>
                         <th>Foto</th>
                         <th>Klub Saat Ini</th>
-                        <th>Asal Negara</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{-- @foreach ($pemain as $item)
+                    @foreach ($dataPemain as $item)
                     <tr>
                         <td> {{ $item->nama }} </td>
                         <td> {{ $item->nomor_punggung }} </td>
                         <td> {{ $item->posisi }} </td>
                         <td> {{ $item->klub->nama_klub }} </td>
                         <td> {{ $item->foto }} </td>
-                        <td> {{ $item->negaras->nama_negara }}</td>
                         <td> {{ $item->created_at }} </td>
                         <td>
                             <div></div>
@@ -55,7 +53,7 @@
                             </form>
                         </td>
                     </tr>
-            @endforeach --}}
+            @endforeach
                 </tbody>
             </table>
             {{-- <div class = "mt-4">{{ $mahasiswas ->withQueryString()->links('pagination::bootstrap-5') }}</div> --}}

@@ -29,8 +29,6 @@ class PemainController extends Controller
         $klub = Klub::orderBy('nama_klub', 'ASC')->get();
         return view('pemain.create')->with('dataKlub', $klub);
 
-        $negara = Negara::orderBy('nama_negara', 'ASC')->get();
-        return view('pemain.create')->with('dataNegara', $negara);
     }
 
     /**
@@ -43,20 +41,19 @@ class PemainController extends Controller
             'nomor_punggung' => 'required',
             'posisi' => 'required',
             'foto' => 'required',
-            'klub_id' => 'required',
-            'negara_id' => 'required'
+            'klub_id' => 'required'
         ]);
 
         $pemain = new Pemain();
         $pemain->nama = $validasi['nama'];
         $pemain->nomor_punggung = $validasi['nomor_punggung'];
         $pemain->posisi = $validasi['posisi'];
+        $pemain->foto = $validasi['foto'];
         $pemain->klub_id = $validasi['klub_id'];
-        $pemain->negara_id = $validasi['negara_id'];
         $pemain->save();
 
-        $pemain->foto = $validasi['foto'];
-        return redirect()->route('')->with('success', "data pemain ".$validasi["nama"]." berhasil ditambahkan");
+       
+        return redirect()->route('pemain.index')->with('success', "data pemain ".$validasi["nama"]." berhasil ditambahkan");
     }
 
     /**

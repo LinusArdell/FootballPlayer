@@ -133,7 +133,7 @@
                                     class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="{{ url('pemain') }}" aria-expanded="false"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Pemain</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="{{ url('klub-bola') }}" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{ url('klub') }}" aria-expanded="false"><i
                                     class="fa fa-table"></i><span class="hide-menu"></span>Klub Bola</a></li>
                         <li> <a class="waves-effect waves-dark" href="{{url('negara') }}" aria-expanded="false"><i
                                     class="fa fa-smile-o"></i><span class="hide-menu"></span>Negara</a></li>

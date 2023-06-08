@@ -21,9 +21,9 @@
                     <form class="forms-sample" action="{{ route('pemain.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nama Klub</label>
-                            <input type="text" class="form-control" name="nama_pemain" placeholder="Nama Pemain Bola">
-                            @error('nama_pemain')
+                            <label for="exampleInputEmail1">Nama Pemain</label>
+                            <input type="text" class="form-control" name="nama" placeholder="Nama Pemain Bola">
+                            @error('nama')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
@@ -64,20 +64,10 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="prodiselect">Asal Negara</label>
-                            <select name="negara_id" class="form-select js-example-basic-single" aria-label="Default select example" placeholder="Pilih Negara">
-                                @foreach ($dataNegara as $item)
-                                    <option value="{{ $item['id'] }}">{{ $item['nama_negara'] }}</option>
-                                @endforeach
-                            </select>
-                            @error('nama_negara')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
+                        <!--  -->
 
                         <button type="submit" class="btn btn-primary me-2">Simpan</button>
-                        <a href="{{ route('klub.index') }}" class="btn btn-light">Batal</a>
+                        <a href="{{ route('pemain.index') }}" class="btn btn-light">Batal</a>
                     </form>
                 </div>
             </div>
