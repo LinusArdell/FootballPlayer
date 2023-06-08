@@ -40,8 +40,8 @@
                         <td> {{ $item->nama }} </td>
                         <td> {{ $item->nomor_punggung }} </td>
                         <td> {{ $item->posisi }} </td>
-                        <td> {{ $item->klub_id}} </td>
-                        <td> <img src="{{ $item->foto ? asset('storage/'.$item->foto) : asset('images/faces/face5.jpg') }}">  </td>
+                        <td> {{ $item->klub->nama_klub }} </td>
+                        <td> {{ $item->foto }} </td>
                         <td> {{ $item->negaras->nama_negara }}</td>
                         <td> {{ $item->created_at }} </td>
                         <td>

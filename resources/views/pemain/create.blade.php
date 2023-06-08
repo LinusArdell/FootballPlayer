@@ -30,16 +30,36 @@
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nomor Punggung</label>
-                            <input type="text" class="form-control" name="nama_manager" placeholder="Nomor Punggung">
-                            @error('nama_manager')
+                            <input type="text" class="form-control" name="nomor_punggung" placeholder="Nomor Punggung">
+                            @error('nomor_punggung')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Logo</label>
-                            <input type="text" class="form-control" name="logo" placeholder="Logo Klub">
-                            @error('logo')
+                            <label for="exampleInputEmail1">Posisi Pemain</label>
+                            <input type="text" class="form-control" name="posisi" placeholder="Posisi Pemain">
+                            @error('posisi')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Foto</label>
+                            <input type="text" class="form-control" name="foto" placeholder="Foto Pemain">
+                            @error('foto')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="prodiselect">Klub Saat ini</label>
+                            <select name="klub_id" class="form-select js-example-basic-single" aria-label="Default select example" placeholder="Pilih Klub">
+                                @foreach ($dataKlub as $item)
+                                    <option value="{{ $item['id'] }}">{{ $item['nama_klub'] }}</option>
+                                @endforeach
+                            </select>
+                            @error('nama_klub')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
@@ -51,7 +71,7 @@
                                     <option value="{{ $item['id'] }}">{{ $item['nama_negara'] }}</option>
                                 @endforeach
                             </select>
-                            @error('nama_neagra')
+                            @error('nama_negara')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>

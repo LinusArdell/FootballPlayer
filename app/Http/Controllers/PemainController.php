@@ -4,23 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Klub;
 use App\Models\KlubBola;
+use App\Models\Negara;
 use App\Models\Pemain;
 use Illuminate\Http\Request;
 use Symfony\Contracts\Service\Attribute\Required;
 
 class PemainController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(Request $request)
+    public function index()
     {
         // $keyword = $request->query('search');
         // if ($keyword){
         //     $pemain = Pemain::where('nama,')
         // }
-
-        return view('pemain.index')->with('pemain');
+        $pemain = Pemain::all();
+        return view('pemain.index')->with('dataPemain', $pemain);
     }
 
     /**
@@ -28,8 +26,11 @@ class PemainController extends Controller
      */
     public function create()
     {
-        $klub = Klub::class;
+        $klub = Klub::orderBy('nama_klub', 'ASC')->get();
         return view('pemain.create')->with('dataKlub', $klub);
+
+        $negara = Negara::orderBy('nama_negara', 'ASC')->get();
+        return view('pemain.create')->with('dataNegara', $negara);
     }
 
     /**
@@ -42,7 +43,8 @@ class PemainController extends Controller
             'nomor_punggung' => 'required',
             'posisi' => 'required',
             'foto' => 'required',
-            'klub_id' => 'required'
+            'klub_id' => 'required',
+            'negara_id' => 'required'
         ]);
 
         $pemain = new Pemain();
@@ -50,6 +52,8 @@ class PemainController extends Controller
         $pemain->nomor_punggung = $validasi['nomor_punggung'];
         $pemain->posisi = $validasi['posisi'];
         $pemain->klub_id = $validasi['klub_id'];
+        $pemain->negara_id = $validasi['negara_id'];
+        $pemain->save();
 
         $pemain->foto = $validasi['foto'];
         return redirect()->route('')->with('success', "data pemain ".$validasi["nama"]." berhasil ditambahkan");
@@ -85,6 +89,6 @@ class PemainController extends Controller
     public function destroy(Pemain $pemain)
     {
         $pemain->delete;
-        return redirect()->route('')->with('success', 'Data berhasil dihapus');
+        return redirect()->route('pemain.index')->with('success', 'Data berhasil dihapus');
     }
 }
