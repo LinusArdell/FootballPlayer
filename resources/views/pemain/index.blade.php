@@ -14,7 +14,7 @@
                     <input type="text" name="search" class="form-control" placeholder="">
                 </form>
             </div>
-            <a href="{{ url('pemain/create') }}" class="btn btn-primary">Tambah</a>
+            <a href="{{ route('pemain.create') }}" class="btn btn-primary">Tambah</a>
 
             {{-- @if (count($pemain)!=0)<
                 <button class="btn btn-danger" id="multi-delete" data-route="{{ route('mhs-multi-delete') }}">Delete All Selected</button>
@@ -42,13 +42,13 @@
                         <td> {{ $item->posisi }} </td>
                         <td> {{ $item->klub_id}} </td>
                         <td> <img src="{{ $item->foto ? asset('storage/'.$item->foto) : asset('images/faces/face5.jpg') }}">  </td>
-                        <td> {{ $item->negara }}</td>
+                        <td> {{ $item->negaras->nama_negara }}</td>
                         <td> {{ $item->created_at }} </td>
                         <td>
                             <div></div>
                             <a href="{{ route('pemain.edit',$item->id) }}">
                             <button class ="btn btn-success btn-sm">Edit</button></a>
-                            <form method="post" class="delete-form" data-route="{{ route('mahasiswa.destroy',$item->id) }}">
+                            <form method="post" class="delete-form" data-route="{{ route('pemain.destroy',$item->id) }}">
                                 @method('delete')
                                 @csrf
                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>

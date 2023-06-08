@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\KlubBolaController;
+use App\Http\Controllers\KlubController;
 use App\Http\Controllers\NegaraController;
 use App\Http\Controllers\PemainController;
 use Illuminate\Support\Facades\Route;
@@ -20,6 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::resource('pemain',PemainController::class);
-// Route::resource();
-// Route::resource('negara', NegaraController::class);
+Route::resource('pemain',PemainController::class);
+Route::resource('klub', KlubController::class);
+Route::resource('negara', NegaraController::class);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Klub;
 use App\Models\KlubBola;
 use App\Models\Pemain;
 use Illuminate\Http\Request;
@@ -27,8 +28,8 @@ class PemainController extends Controller
      */
     public function create()
     {
-        $klub_bola = KlubBola::class;
-        return view('pemain.create')->with('klub_bola', $klub_bola);
+        $klub = Klub::class;
+        return view('pemain.create')->with('dataKlub', $klub);
     }
 
     /**

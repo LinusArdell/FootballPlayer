@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pemain extends Model
 {
-    protected $table = "Pemain";
-    use HasFactory, HasUlids;
+    protected $table = "pemain";
+    use HasFactory, HasUuids;
 
     protected $fillable = ['nama', 'nomor_punggung', 'posisi', 'foto'];
 
-    public function klubBola(){
-        return $this->belongsTo(KlubBola::class, 'klub_id');
+    public function klub(){
+        return $this->belongsTo(Klub::class, 'klub_id');
     }
 }

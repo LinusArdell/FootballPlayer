@@ -2,32 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Klub;
+use App\Models\Negara;
 use Illuminate\Http\Request;
 
 class KlubController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $klub = Klub::all();
+        return view('klub.index')->with('dataKlub', $klub);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $negara = Negara::orderBy('nama_negara', 'ASC')->get();
+        return view('klub.create')->with('dataNegara', $negara);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validasi = $request->validate([
+            'nama_klub' => 'required',
+            'nama_manager' => 'required',
+            'logo' => 'required',
+            'negara_id' => 'required'
+        ]);
+
+        $klub = new Klub();
+        $klub->nama_klub = $validasi['nama_klub'];
+        $klub->nama_manager = $validasi['nama_manager'];
+        $klub->logo = $validasi['logo'];
+        $klub->negara_id = $validasi['negara_id'];
+        $klub->save();
+
+        return redirect()->route('klub.index')->with('success', "data klub ".$validasi['nama_klub']." berhasil disimpan");
     }
 
     /**
