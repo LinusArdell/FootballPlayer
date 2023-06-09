@@ -18,10 +18,10 @@
                     <h4 class="card-title">Input Pemain to List</h4>
                     <p class="card-description">Tambah List baru</p>
 
-                    <form class="forms-sample" action="{{ route('pemain.store') }}" method="POST">
+                    <form class="forms-sample" action="{{ route('pemain.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nama Pemain</label>
+                            <label for="nama">Nama Pemain</label>
                             <input type="text" class="form-control" name="nama" placeholder="Nama Pemain Bola">
                             @error('nama')
                                 <span class="text-danger">{{ $message }}</span>
@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nomor Punggung</label>
+                            <label for="nomor_punggung">Nomor Punggung</label>
                             <input type="text" class="form-control" name="nomor_punggung" placeholder="Nomor Punggung">
                             @error('nomor_punggung')
                                 <span class="text-danger">{{ $message }}</span>
@@ -37,16 +37,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Posisi Pemain</label>
+                            <label for="posisi">Posisi Pemain</label>
                             <input type="text" class="form-control" name="posisi" placeholder="Posisi Pemain">
                             @error('posisi')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Foto</label>
-                            <input type="text" class="form-control" name="foto" placeholder="Foto Pemain">
+                        <div class="form-group col-lg-6">
+                            <label for="foto">Foto Pemain</label>
+                            <input type="file" class="form-control" name="foto" placeholder="Input Foto Pemain">
                             @error('foto')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

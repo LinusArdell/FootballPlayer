@@ -30,6 +30,15 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+    // In your Javascript (external .js resource or <script> tag)
+    $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+    });
+</script>
+
 </head>
 
 <body class="skin-default-dark fixed-layout">
@@ -133,7 +142,7 @@
                                     class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="{{ url('pemain') }}" aria-expanded="false"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Pemain</span></a></li>
-                        <li> <a class="waves-effect waves-dark" href="{{ url('klub-bola') }}" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{ url('klub') }}" aria-expanded="false"><i
                                     class="fa fa-table"></i><span class="hide-menu"></span>Klub Bola</a></li>
                         <li> <a class="waves-effect waves-dark" href="{{url('negara') }}" aria-expanded="false"><i
                                     class="fa fa-smile-o"></i><span class="hide-menu"></span>Negara</a></li>

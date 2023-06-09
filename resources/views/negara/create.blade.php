@@ -20,19 +20,19 @@
                     <h4 class="card-title">Input Negara to List</h4>
                     <p class="card-description">Tambah List baru</p>
 
-                    <form class="forms-sample" action="{{ route('negara.store') }}" method="POST">
+                    <form class="forms-sample" action="{{ route('negara.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nama negara</label>
+                            <label for="exampleInputNation">Nama negara</label>
                             <input type="text" class="form-control" name="nama_negara" placeholder="Nama Negara">
                             @error('nama_negara')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Bendera</label>
-                            <input type="text" class="form-control" name="bendera" placeholder="Bendera">
+                        <div class="form-group col-lg-6">
+                            <label for="foto">Bendera</label>
+                            <input type="file" class="form-control" name="bendera" placeholder="Masukan Flag">
                             @error('bendera')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror

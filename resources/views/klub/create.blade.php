@@ -19,10 +19,10 @@
                     <h4 class="card-title">Input Negara to List</h4>
                     <p class="card-description">Tambah List baru</p>
 
-                    <form class="forms-sample" action="{{ route('klub.store') }}" method="POST">
+                    <form class="forms-sample" action="{{ route('klub.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nama Klub</label>
+                            <label for="nama_klub">Nama Klub</label>
                             <input type="text" class="form-control" name="nama_klub" placeholder="Nama Klub Bola">
                             @error('nama_klub')
                                 <span class="text-danger">{{ $message }}</span>
@@ -30,29 +30,33 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Nama Manager</label>
+                            <label for="nama_manager">Nama Manager</label>
                             <input type="text" class="form-control" name="nama_manager" placeholder="Nama Manager">
                             @error('nama_manager')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Logo</label>
-                            <input type="text" class="form-control" name="logo" placeholder="Logo Klub">
+                        <div class="form-group col-lg-6">
+                            <label for="logo">Logo Club</label>
+                            <input type="file" class="form-control" name="logo" placeholder="Masukan logo Club">
                             @error('logo')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>
 
                         <div class="form-group">
-                            <label for="prodiselect">Asal Negara</label>
+                            <label for="asalNegara">Asal Negara</label>
                             <select name="negara_id" class="form-select js-example-basic-single" aria-label="Default select example" placeholder="Pilih Negara">
                                 @foreach ($dataNegara as $item)
-                                    <option value="{{ $item['id'] }}">{{ $item['nama_negara'] }}</option>
+
+                                <option value="{{ $item['id'] }}">{{ $item['nama_negara']}}
+                                        -
+                                </option>
+
                                 @endforeach
                             </select>
-                            @error('nama_neagra')
+                            @error('nama_negara')
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror
                         </div>

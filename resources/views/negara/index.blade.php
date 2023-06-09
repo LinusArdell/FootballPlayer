@@ -33,7 +33,7 @@
                                 @foreach ($dataNegara as $item)
                                     <tr>
                                         <td>{{ $item->nama_negara }}</td>
-                                        <td>{{ $item->bendera }}</td>
+                                        <td> <img style="width: 50px;height:50px;"class="img-circle" src="{{ $item->bendera ? asset('storage/bendera/'.$item->bendera) : asset('assets/images/logo-icon.png') }}">  </td>
                                         <td>{{ $item->created_at }}</td>
                                     </tr>
                                 @endforeach

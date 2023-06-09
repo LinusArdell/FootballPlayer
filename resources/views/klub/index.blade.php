@@ -26,6 +26,7 @@
                             <tr>
                                 <th>Nama Klub</th>
                                 <th>Manajer</th>
+
                                 {{-- input foto  --}}
                                 <th>*</th>
                                 <th>Negara </th>
@@ -37,9 +38,12 @@
                             <tr>
                                 <td> {{ $item->nama_klub }} </td>
                                 <td> {{ $item->nama_manager }} </td>
-                                <td> {{ $item->logo }} </td>
+                                <td> <img style="width: 40px" src="{{ $item->logo ? asset('storage/logo/'.$item->logo) : asset('assets/images/logo-icon.png') }}">  </td>
                                 <td> {{ $item->negaras->nama_negara }}</td>
                                 <td> {{ $item->created_at }} </td>
+                                <td>
+
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

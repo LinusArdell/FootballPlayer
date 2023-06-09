@@ -32,14 +32,25 @@ class NegaraController extends Controller
     {
         $validasi = $request->validate([
             'nama_negara' => 'required',
-            'bendera' => 'required'
+            'bendera' => 'required|image|mimes:jpg,jpeg,png'
         ]);
 
         $negaras = new Negara();
         $negaras->nama_negara = $validasi['nama_negara'];
-        $negaras->bendera = $validasi['bendera'];
-        $negaras->save();
 
+
+
+    //input foto gambar
+        $ext = $request->bendera->getClientOriginalExtension();
+//                              "Nama File"
+//                                  v
+        $new_file = $validasi['nama_negara'].".".$ext;
+//                              "Nama Folder"
+//                                     v
+        $request->bendera->storeAS('public/bendera/',$new_file);
+
+        $negaras->bendera = $new_file;
+        $negaras->save();
         return redirect()->route('negara.index')->with('success', "data negara ".$validasi['nama_negara']." berhasil disimpan");
     }
 

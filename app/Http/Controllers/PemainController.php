@@ -40,7 +40,7 @@ class PemainController extends Controller
             'nama' => 'required',
             'nomor_punggung' => 'required',
             'posisi' => 'required',
-            'foto' => 'required',
+            'foto' => 'required|image|mimes:jpg,jpeg,png',
             'klub_id' => 'required'
         ]);
 
@@ -48,11 +48,26 @@ class PemainController extends Controller
         $pemain->nama = $validasi['nama'];
         $pemain->nomor_punggung = $validasi['nomor_punggung'];
         $pemain->posisi = $validasi['posisi'];
-        $pemain->foto = $validasi['foto'];
+
         $pemain->klub_id = $validasi['klub_id'];
+
+
+
+    //input foto gambar
+    $ext = $request->foto->getClientOriginalExtension();
+    //                              "Nama File"
+    //                                  v
+            $new_file = $validasi['nama'].".".$ext;
+    //                              "Nama Folder"
+    //                                     v
+            $request->foto->storeAS('public/pemain/',$new_file);
+
+            $pemain->foto = $new_file;
+
+
         $pemain->save();
 
-       
+
         return redirect()->route('pemain.index')->with('success', "data pemain ".$validasi["nama"]." berhasil ditambahkan");
     }
 
@@ -70,14 +85,47 @@ class PemainController extends Controller
     public function edit(string $id)
     {
         //
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, pemain $pemain)
     {
         //
+        {
+            $validasi = $request->validate([
+                'nama' => 'required',
+                'nomor_punggung' => 'required',
+                'posisi' => 'required',
+                'foto' => 'required|image|mimes:jpg,jpeg,png',
+                'klub_id' => 'required'
+            ]);
+
+
+            $pemain->nama = $pemain->nama;
+            $pemain->nomor_punggung = $validasi['nomor_punggung'];
+            $pemain->posisi = $validasi['posisi'];
+
+            $pemain->klub_id = $validasi['klub_id'];
+        //input foto gambar
+        $ext = $request->foto->getClientOriginalExtension();
+        //                              "Nama File"
+        //                                  v
+                $new_file = $validasi['nama'].".".$ext;
+        //                              "Nama Folder"
+        //                                     v
+                $request->foto->storeAS('public/pemain/',$new_file);
+
+                $pemain->foto = $new_file;
+
+
+            $pemain->save();
+
+
+            return redirect()->route('pemain.index')->with('success', "data pemain ".$validasi["nama"]." berhasil ditambahkan");
+        }
     }
 
     /**
@@ -85,7 +133,12 @@ class PemainController extends Controller
      */
     public function destroy(Pemain $pemain)
     {
-        $pemain->delete;
-        return redirect()->route('pemain.index')->with('success', 'Data berhasil dihapus');
+        $data = $pemain->id->delete();
+        // return redirect()->route('mahasiswa.index')->with('success', 'Data berhasil dihapus');
+        return response("data berhasil dihapus", 200);
+    }
+    public function multiDelete(Request $request) {
+        pemain::whereIn('id', $request->get('selected'))->delete();
+        return response("selected pemain(s) delete successfully", 200);
     }
 }

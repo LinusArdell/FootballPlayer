@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('pemain', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->uuid('id');
+            $table->primary('id');
             $table->string('nama');
-            $table->string('nomor_punggung');
+            $table->char('nomor_punggung',2);
             $table->string('posisi');
             $table->string('foto');
             $table->uuid('klub_id');
