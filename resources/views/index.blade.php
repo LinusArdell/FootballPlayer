@@ -124,4 +124,8 @@
                         });
                     </script>
                     </p>
+                    <form method="POST" action="{{ route('logout') }}" class="text-center">
+                @csrf
+                <button type="submit" class="btn-hover mb-2 mt-2 btn-danger" style="width: 100px; border-radius: 5px;">Logout</button>
+              </form>
 @endsection

@@ -32,23 +32,17 @@ class KlubController extends Controller
         $klub = new Klub();
         $klub->nama_klub = $validasi['nama_klub'];
         $klub->nama_manager = $validasi['nama_manager'];
-
         $klub->negara_id = $validasi['negara_id'];
 
-
-        //input foto gambar
+        // Input foto gambar
         $ext = $request->logo->getClientOriginalExtension();
-//                              "Nama File"
-//                                  v
-        $new_file = $validasi['nama_klub'].".".$ext;
-//                              "Nama Folder"
-//                                     v
-   $path = $request->logo->storeAS('public/logo',$new_file);
+        $new_file = $validasi['nama_klub'] . "." . $ext;
+        $path = $request->logo->storeAS('public/logo', $new_file);
 
         $klub->logo = $new_file;
         $klub->save();
 
-        return redirect()->route('klub.index')->with('success', "data klub ".$validasi['nama_klub']." berhasil disimpan");
+        return redirect()->route('klub.index')->with('success', "Data klub " . $validasi['nama_klub'] . " berhasil disimpan");
     }
 
     /**
@@ -56,7 +50,7 @@ class KlubController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // 
     }
 
     /**
@@ -64,7 +58,7 @@ class KlubController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // 
     }
 
     /**
@@ -72,7 +66,7 @@ class KlubController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // 
     }
 
     /**
@@ -80,9 +74,8 @@ class KlubController extends Controller
      */
     public function destroy(Klub $dataKlub)
     {
-        //
         $dataKlub->delete();
         // return redirect()->route('mahasiswa.index')->with('success', 'Data berhasil dihapus');
-        return response("data berhasil dihapus", 200);
+        return response("Data berhasil dihapus", 200);
     }
 }
