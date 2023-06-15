@@ -25,7 +25,7 @@ class KlubController extends Controller
         $validasi = $request->validate([
             'nama_klub' => 'required',
             'nama_manager' => 'required',
-            'logo' => 'required|image|mimes:jpg,jpeg,png',
+            'logo' => 'required|file|image|mimes:jpg,jpeg,png',
             'negara_id' => 'required'
         ]);
 
@@ -43,7 +43,7 @@ class KlubController extends Controller
         $new_file = $validasi['nama_klub'].".".$ext;
 //                              "Nama Folder"
 //                                     v
-        $request->logo->storeAS('public/logo/ ',$new_file);
+   $path = $request->logo->storeAS('public/logo',$new_file);
 
         $klub->logo = $new_file;
         $klub->save();

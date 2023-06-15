@@ -19,6 +19,6 @@ class DashboardController extends Controller
         JOIN negaras p ON K.negara_id = p.id
         GROUP BY p.nama_negara');
         // dd($data['klubNegara']);
-        return view('dashboard', $data);
+        return view('index', $data);
     }
 }
