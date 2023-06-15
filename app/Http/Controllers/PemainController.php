@@ -95,6 +95,7 @@ class PemainController extends Controller
     {
         //
         {
+            $this->authorize('create', Pemain::class);
             $validasi = $request->validate([
                 'nama' => 'required',
                 'nomor_punggung' => 'required',

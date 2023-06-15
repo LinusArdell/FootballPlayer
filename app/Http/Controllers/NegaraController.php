@@ -30,8 +30,6 @@ class NegaraController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create', Negara::class);
-
         $validasi = $request->validate([
             'nama_negara' => 'required',
             'bendera' => 'required|image|mimes:jpg,jpeg,png'
