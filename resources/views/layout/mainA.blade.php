@@ -138,7 +138,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="{{ asset('html/index.html') }}" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{ asset('dashboard') }}" aria-expanded="false"><i
                                     class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="{{ url('pemain') }}" aria-expanded="false"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Pemain</span></a></li>

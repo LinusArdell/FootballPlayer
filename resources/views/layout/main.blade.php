@@ -109,7 +109,30 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img   src="{{ asset('assets/images/users/1.jpg') }}" alt="user" class="img-circle" width="30" /></a>
+                                <img   src="{{ asset('assets/images/users/1.jpg') }}"
+                                            alt="user" class="img-circle" width="30" />
+
+
+                                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                                        aria-labelledby="profileDropdown">
+                                        <a class="dropdown-item">
+                                            <i class="mdi mdi-settings text-primary"></i>
+                                            Settings
+
+                                        </a>
+                                        <a class="dropdown-item">
+
+
+                                            <form method="POST" action="{{ route('login') }}">
+                                                @csrf
+                                                <i class="mdi mdi-logout text-primary"></i>
+                                                {{ __('Log Out') }}
+                                            </form>
+                                        </a>
+                                    </div>
+                                </li>
+                            </a>
+
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
@@ -138,7 +161,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="{{ asset('html/index.html') }}" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="{{ asset('dashboard') }}" aria-expanded="false"><i
                                     class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="{{ url('pemain') }}" aria-expanded="false"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Pemain</span></a></li>
