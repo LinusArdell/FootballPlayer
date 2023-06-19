@@ -120,15 +120,13 @@
                                             Settings
 
                                         </a>
-                                        <a class="dropdown-item">
-
-
-                                            <form method="POST" action="{{ route('login') }}">
-                                                @csrf
+                                        <form method="POST" action="{{ route('logout') }}" class="text-center">
+                                            @csrf
+                                        <button class="dropdown-item">
                                                 <i class="mdi mdi-logout text-primary"></i>
                                                 {{ __('Log Out') }}
-                                            </form>
-                                        </a>
+                                        </button>
+                                    </form>
                                     </div>
                                 </li>
                             </a>

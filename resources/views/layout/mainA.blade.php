@@ -109,7 +109,28 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href=""
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img   src="{{ asset('assets/images/users/1.jpg') }}" alt="user" class="img-circle" width="30" /></a>
+                                <img   src="{{ asset('assets/images/users/1.jpg') }}"
+                                            alt="user" class="img-circle" width="30" />
+
+
+                                    <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                                        aria-labelledby="profileDropdown">
+                                        <a class="dropdown-item">
+                                            <i class="mdi mdi-settings text-primary"></i>
+                                            Settings
+
+                                        </a>
+                                        <form method="POST" action="{{ route('logout') }}" class="text-center">
+                                            @csrf
+                                        <button class="dropdown-item">
+                                                <i class="mdi mdi-logout text-primary"></i>
+                                                {{ __('Log Out') }}
+                                        </button>
+                                    </form>
+                                    </div>
+                                </li>
+                            </a>
+
                         </li>
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
