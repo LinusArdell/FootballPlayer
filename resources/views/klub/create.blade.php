@@ -50,8 +50,8 @@
                             <select name="negara_id" class="form-select js-example-basic-single" aria-label="Default select example" placeholder="Pilih Negara">
                                 @foreach ($dataNegara as $item)
 
-                                <option value="{{ $item['id'] }}">{{ $item['nama_negara']}}
-                                        -
+                                <option  value="{{ $item['id'] }}">{{ $item['nama_negara']}}
+                                        - <img style="width: 30px;height:20px;"class="" src="{{ asset('storage/bendera/'.$item->bendera) }}">
                                 </option>
 
                                 @endforeach
