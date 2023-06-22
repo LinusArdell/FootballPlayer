@@ -11,10 +11,10 @@
     <meta name="description"
         content="Elegant Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Elegant Admin Lite Template by WrapPixel</title>
+    <title>The Souccer - @yield('Judul') </title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/elegant-admin-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/little one.png') }}">
     <!-- This page CSS -->
     <!-- chartist CSS -->
     <link href="{{ asset('assets/node_modules/morrisjs/morris.css') }}" rel="stylesheet">
@@ -48,7 +48,9 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">The Suockeer</p>
+            <p class="loader__label">The Souccer
+
+            </p>
         </div>
     </div>
     <!-- ============================================================== -->
@@ -68,16 +70,16 @@
                         <!-- Logo icon --><b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="{{ asset('assets/images/logo-icon.png') }}" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('assets/images/little one.png') }}" alt="homepage" class="dark-logo" />
                             <!-- Light Logo icon -->
-                            <img src="{{ asset('assets/images/logo-light-icon.png') }}" alt="homepage" class="light-logo" />
+                            <img src="{{ asset('assets/images/white-text.png') }}" alt="homepage" class="light-logo" />
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text --><span>
                             <!-- dark Logo text -->
-                            <img src="{{ asset('assets/images/logo-text.png') }}" alt="homepage" class="dark-logo" />
+                            <img src="{{ asset('assets/images/text-only-icon.png') }}" alt="homepage" class="ml-2 dark-logo" style="width:92px;height:20px "/>
                             <!-- Light Logo text -->
-                            <img src="{{ asset('assets/images/logo-light-text.png') }}" class="light-logo" alt="homepage" /></span>
+                            <img src="{{ asset('assets/images/white-text.png') }}" class="light-logo" alt="homepage" /></span>
                     </a>
                 </div>
                 <!-- ============================================================== -->
@@ -148,7 +150,7 @@
 
         <aside class="left-sidebar">
             <div class="d-flex no-block nav-text-box align-items-center">
-                <span><img src="{{ asset('assets/images/logo-icon.png') }}" alt="elegant admin template"></span>
+                <span><img src="{{ asset('assets/images/little one.png') }}" alt="elegant admin template"></span>
                 <a class="waves-effect waves-dark ml-auto hidden-sm-down" href="javascript:void(0)"><i
                         class="ti-menu"></i></a>
                 <a class="nav-toggler waves-effect waves-dark ml-auto hidden-sm-up" href="javascript:void(0)"><i
@@ -162,20 +164,11 @@
                         <li> <a class="waves-effect waves-dark" href="{{ asset('dashboard') }}" aria-expanded="false"><i
                                     class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="{{ url('pemain') }}" aria-expanded="false"><i
-                                    class="fa fa-user-circle-o"></i><span class="hide-menu">Pemain</span></a></li>
+                                    class="fa fa-list-alt"></i><span class="hide-menu">Pemain</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="{{ url('klub') }}" aria-expanded="false"><i
                                     class="fa fa-table"></i><span class="hide-menu"></span>Klub Bola</a></li>
                         <li> <a class="waves-effect waves-dark" href="{{url('negara') }}" aria-expanded="false"><i
-                                    class="fa fa-smile-o"></i><span class="hide-menu"></span>Negara</a></li>
-                        <li> <a class="waves-effect waves-dark" href="{{ asset('html/map-google.html') }}" aria-expanded="false"><i
-                                    class="fa fa-globe"></i><span class="hide-menu"></span>Map</a></li>
-                        <li> <a class="waves-effect waves-dark" href="{{ asset('html/pages-blank.html') }}" aria-expanded="false"><i
-                                    class="fa fa-bookmark-o"></i><span class="hide-menu"></span>Blank</a></li>
-                        <li> <a class="waves-effect waves-dark" href="{{ asset('html/pages-error-404.html') }}" aria-expanded="false"><i
-                                    class="fa fa-question-circle"></i><span class="hide-menu"></span>404</a></li>
-                        <div class="text-center m-t-30">
-                            <a href="https://wrappixel.com/templates/elegant-admin/"
-                                class="btn waves-effect waves-light btn-success hidden-md-down"> Upgrade to Pro</a>
+                                    class="fa fa-globe"></i><span class="hide-menu"></span>Negara</a></li>
                         </div>
                     </ul>
                 </nav>

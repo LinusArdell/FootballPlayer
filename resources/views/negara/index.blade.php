@@ -1,7 +1,7 @@
 @extends('layout.main')
 
 @section('Judul')
-    List Negara Tersedia
+    List Negara
 @endsection
 
 @section('content')
@@ -33,7 +33,7 @@
                                 @foreach ($dataNegara as $item)
                                     <tr>
                                         <td>{{ $item->nama_negara }}</td>
-                                        <td> <img style="width: 50px;height:50px;"class="img-circle" src="{{ $item->bendera ? asset('storage/bendera/'.$item->bendera) : asset('assets/images/logo-icon.png') }}">  </td>
+                                        <td> <img style="width: 30px;height:20px;"class="" src="{{ $item->bendera ? asset('storage/bendera/'.$item->bendera) : asset('assets/images/logo-icon.png') }}">  </td>
                                         <td>{{ $item->created_at }}</td>
                                     </tr>
                                 @endforeach

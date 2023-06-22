@@ -1,20 +1,20 @@
 // Green colors
 .skin-default-dark {
     /*Theme Colors*/
-    $themecolor: #009efb;
-    $themecolor-dark: #028ee1;
+    $themecolor: #9714bb;
+    $themecolor-dark: #790db8;
     $topbar: #fff;
     $sidebar: #2b2f3a;
     $sidebar-alt:#1f2023;
     $sidebar-text: #8991a9;
-    $sidebar-icons: #7f879b; 
+    $sidebar-icons: #7f879b;
     // Topbar
     .topbar {
         background: $topbar;
         .navbar-dark .navbar-nav .nav-link{
             color:$gray-500;
         }
-        
+
     }
     //Sidebar
     .sidebar-nav {
@@ -36,14 +36,14 @@
             }
         }
     }
-    
+
     //Bread-crumb
     .page-titles .breadcrumb .breadcrumb-item.active{
         color: $themecolor;
     }
-    
+
     // Sidebar dark
-    
+
     .topbar{
         .top-navbar .navbar-header .navbar-brand .dark-logo {
             display: inline-block;
@@ -52,7 +52,7 @@
         .top-navbar .navbar-header .navbar-brand .light-logo {
             display: none;
         }
-    }    
+    }
     .left-sidebar {
         background: $sidebar;
         .user-pro-body{
@@ -62,7 +62,7 @@
         }
         .nav-text-box{
             border-color:transparent;
-            background:rgba(0, 0, 0, 0.3); 
+            background:rgba(0, 0, 0, 0.3);
         }
         .sidebar-nav>ul>li>a, .sidebar-nav ul li a {
             color:$sidebar-text;
@@ -71,12 +71,12 @@
                 color:$sidebar-icons;
             }
             &:hover i, &:hover{
-               color:$white; 
+               color:$white;
             }
             &.active, &.active i{
                 color:$white;
             }
-        } 
+        }
         .sidebar-nav>ul>li.selected > a{
             color: $white;
             i {
@@ -94,7 +94,7 @@
         &.mini-sidebar .sidebar-nav #sidebarnav > li > ul, &.mini-sidebar .sidebar-nav #sidebarnav > li:hover > a{
             background: $sidebar-alt;
         }
-        
+
     }
-    
+
 }

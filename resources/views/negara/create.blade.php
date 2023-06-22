@@ -1,7 +1,7 @@
 @extends('layout.mainA')
 
 @section('Judul')
-    Daftar Pemain Bola
+    List Negara
 @endsection
 
 @section('subJudul')
