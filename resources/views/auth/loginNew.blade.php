@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>The Souccer</title>
+    <title>Login - The Register</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('assets1/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets1/vendors/css/vendor.bundle.base.css') }}">
@@ -19,8 +19,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/little one.png') }}">
     <!-- This page CSS -->
   </head>
-  <body>
-
+  <body style="background-image: url('asset/image/background/football.png')">
+g
     <div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center auth">
@@ -91,7 +91,7 @@
                     <a href="#" class="auth-link text-black">Forgot password?</a>
                   </div> --}}
 
-                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href="register.html" class="text-primary">Create</a>
+                  <div class="text-center mt-4 font-weight-light"> Don't have an account? <a href={{ route('register') }} class="text-primary">Create</a>
                   </div>
                 </form>
               </div>

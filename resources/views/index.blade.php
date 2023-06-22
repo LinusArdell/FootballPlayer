@@ -4,7 +4,7 @@
     Dashboard
 @endsection
 @section('content')
-  <h1>Pemain Bola</h1>
+  <h1>Jumlah Klub Terdaftar</h1>
 
   <p>
                         Pemain : {{ count($pemain) }}
@@ -21,11 +21,7 @@
                         <figure class="highcharts-figure">
                         <div id="container"></div>
                             <p class="highcharts-description">
-                            A basic column chart comparing emissions by pollutant.
-                            Oil and gas extraction has the overall highest amount of
-                            emissions, followed by manufacturing industries and mining.
-                            The chart is making use of the axis crosshair feature, to highlight
-                            years as they are hovered over.
+                            Daftar klub yang di data
                             </p>
                         </figure>
 
@@ -84,10 +80,10 @@
                                 type: 'column'
                             },
                             title: {
-                                text: 'Monthly Average Rainfall'
+                                text: 'Klub Yang Terdata di The Souccer'
                             },
                             subtitle: {
-                                text: 'Source: WorldClimate.com'
+                                text: ''
                             },
                             xAxis: {
                                 categories: [
@@ -100,13 +96,13 @@
                             yAxis: {
                                 min: 0,
                                 title: {
-                                    text: 'Rainfall (mm)'
+                                    text: ''
                                 }
                             },
                             tooltip: {
                                 headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                                 pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                                    '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                                    '<td style="padding:0"><b>{point.y}</b></td></tr>',
                                 footerFormat: '</table>',
                                 shared: true,
                                 useHTML: true
@@ -128,8 +124,8 @@
                         });
                     </script>
                     </p>
-                    <form method="POST" action="{{ route('logout') }}" class="text-center">
+                    {{-- <form method="POST" action="{{ route('logout') }}" class="text-center">
                 @csrf
                 <button type="submit" class="btn-hover mb-2 mt-2 btn-danger" style="width: 100px; border-radius: 5px;">Logout</button>
-              </form>
+              </form> --}}
 @endsection
