@@ -28,8 +28,10 @@ Route::post('register', [RegisterController::class, 'register']);
 
 Route::middleware('auth:sanctum')->get('/klub', [KlubController::class, 'index']);
 Route::middleware('auth:sanctum')->post('/klub/store', [KlubController::class, 'store']);
+Route::middleware('auth:sanctum')->post('/klub/update/{id}', [KlubController::class, 'update']);
+Route::middleware('auth:sanctum')->delete('/klub/delete/{id}', [KlubController::class, 'delete']);
 
 Route::middleware('auth:sanctum')->get('/pemain', [PemainController::class, 'index']);
 Route::middleware('auth:sanctum')->post('/pemain/store', [PemainController::class, 'store']);
-Route::middleware('auth:sanctum')->post('/pemain/update', [PemainController::class, 'update']);
-Route::middleware('auth:sanctum')->post('/pemain/delete', [PemainController::class, 'delete']);
+Route::middleware('auth:sanctum')->post('/pemain/update/{id}', [PemainController::class, 'update']);
+Route::middleware('auth:sanctum')->delete('/pemain/delete/{id}', [PemainController::class, 'delete']);

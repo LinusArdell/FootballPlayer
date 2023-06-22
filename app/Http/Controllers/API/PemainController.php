@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 
 class PemainController extends BaseController
 {
-    public function index(){
+    public function index()
+    {
         $pemain = Pemain::all();
         $success['data'] = $pemain;
         return $this->sendSuccess($success, 'Data Pemain Bola');
@@ -47,8 +48,6 @@ class PemainController extends BaseController
 
     public function update(Request $request, Pemain $pemain, $id)
     {
-        $this->authorize('create', Pemain::class);
-
         $validasi = $request->validate([
             'nama' => 'required',
             'nomor_punggung' => 'required',
@@ -63,7 +62,7 @@ class PemainController extends BaseController
         $path = $request->foto->storeAS('public', $nama_file);
 
         $pemain = Pemain::find($id);
-        $pemain->nama_pemain = $validasi['nama'];
+        $pemain->nama = $validasi['nama'];
         $pemain->nomor_punggung = $validasi['nomor_punggung'];
         $pemain->posisi = $validasi['posisi'];
         $pemain->foto = $nama_file;
