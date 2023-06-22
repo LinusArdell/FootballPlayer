@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/pemain/multi-delete', [PemainController::class, 'multiDelete'])->name('pemain.multi-delete');
+
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -33,5 +36,8 @@ Route::middleware('auth')->group(function () {
 Route::resource('pemain', PemainController::class);
 Route::resource('klub', KlubController::class);
 Route::resource('negara', NegaraController::class);
+
+
+
 
 require __DIR__.'/auth.php';

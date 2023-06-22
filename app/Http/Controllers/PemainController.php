@@ -132,14 +132,17 @@ class PemainController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pemain $pemain)
+    public function destroy(Pemain $pemain, Request $request)
     {
-        $data = $pemain->id->delete();
-        // return redirect()->route('mahasiswa.index')->with('success', 'Data berhasil dihapus');
-        return response("data berhasil dihapus", 200);
+        $pemain->delete();
+        return redirect()->route('pemain.index')->with('success', 'Data berhasil di delete');
     }
+    
     public function multiDelete(Request $request) {
-        pemain::whereIn('id', $request->get('selected'))->delete();
-        return response("selected pemain(s) delete successfully", 200);
+        $ids = $request->ids;
+        
+        Pemain::whereIn('id', $ids)->delete();
+        
+        return response('Selected pemain(s) deleted successfully', 200);
     }
 }
