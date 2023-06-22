@@ -36,6 +36,7 @@ class PemainController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Pemain::class);
         $validasi = $request->validate([
             'nama' => 'required',
             'nomor_punggung' => 'required',
@@ -82,58 +83,50 @@ class PemainController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Pemain $pemain)
     {
-        //
-
+        $klub = Klub::orderBy('nama_klub', 'ASC')->get();
+        return view('pemain.edit')->with('dataKlub',$klub)->with('pemain',$pemain);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, pemain $pemain)
-    {
-        //
-        {
-            $this->authorize('create', Pemain::class);
-            $validasi = $request->validate([
-                'nama' => 'required',
-                'nomor_punggung' => 'required',
-                'posisi' => 'required',
-                'foto' => 'required|image|mimes:jpg,jpeg,png',
-                'klub_id' => 'required'
-            ]);
+    public function update(Request $request, Pemain $pemain)
+{
+    $this->authorize('update', Pemain::class);
+    $validasi = $request->validate([
+        'nama' => 'required',
+        'nomor_punggung' => 'required',
+        'posisi' => 'required',
+        'foto' => 'nullable|image|mimes:jpg,jpeg,png',
+        'klub_id' => 'required'
+    ]);
 
+    $pemain->nama = $validasi['nama'];
+    $pemain->nomor_punggung = $validasi['nomor_punggung'];
+    $pemain->posisi = $validasi['posisi'];
+    $pemain->klub_id = $validasi['klub_id'];
 
-            $pemain->nama = $pemain->nama;
-            $pemain->nomor_punggung = $validasi['nomor_punggung'];
-            $pemain->posisi = $validasi['posisi'];
-
-            $pemain->klub_id = $validasi['klub_id'];
-        //input foto gambar
+    if ($request->hasFile('foto')) {
         $ext = $request->foto->getClientOriginalExtension();
-        //                              "Nama File"
-        //                                  v
-                $new_file = $validasi['nama'].".".$ext;
-        //                              "Nama Folder"
-        //                                     v
-                $request->foto->storeAS('public/pemain/',$new_file);
-
-                $pemain->foto = $new_file;
-
-
-            $pemain->save();
-
-
-            return redirect()->route('pemain.index')->with('success', "data pemain ".$validasi["nama"]." berhasil ditambahkan");
-        }
+        $new_file = $validasi['nama'] . "." . $ext;
+        $request->foto->storeAS('public/pemain/', $new_file);
+        $pemain->foto = $new_file;
     }
+
+    $pemain->save();
+
+    return redirect()->route('pemain.index')->with('success', "Data pemain " . $validasi["nama"] . " berhasil diedit");
+}
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Pemain $pemain, Request $request)
     {
+        $this->authorize('destroy', Pemain::class);
         $pemain->delete();
         return redirect()->route('pemain.index')->with('success', 'Data berhasil di delete');
     }

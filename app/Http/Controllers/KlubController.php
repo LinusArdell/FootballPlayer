@@ -22,6 +22,7 @@ class KlubController extends Controller
 
     public function store(Request $request)
     {
+        $this->authorize('store', Klub::class);
         $validasi = $request->validate([
             'nama_klub' => 'required',
             'nama_manager' => 'required',
@@ -74,8 +75,8 @@ class KlubController extends Controller
      */
     public function destroy(Klub $dataKlub)
     {
+        $this->authorize('destroy', Klub::class);
         $dataKlub->delete();
-        // return redirect()->route('mahasiswa.index')->with('success', 'Data berhasil dihapus');
-        return response("Data berhasil dihapus", 200);
+        return redirect()->route('klub.index')->with('success', 'Data berhasil di delete');
     }
 }

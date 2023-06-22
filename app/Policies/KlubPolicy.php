@@ -2,11 +2,10 @@
 
 namespace App\Policies;
 
-use App\Models\Pemain;
+use App\Models\Klub;
 use App\Models\User;
-use Illuminate\Auth\Access\Response;
 
-class PemainPolicy
+class KlubPolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +18,7 @@ class PemainPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Pemain $pemain): bool
+    public function view(User $user, Klub $pemain): bool
     {
         //
     }
@@ -35,7 +34,7 @@ class PemainPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user): bool
+    public function update(User $user, Klub $pemain): bool
     {
         return $user->role === 'A';
     }
@@ -51,7 +50,7 @@ class PemainPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Pemain $pemain): bool
+    public function restore(User $user, Klub $pemain): bool
     {
         //
     }
@@ -59,7 +58,7 @@ class PemainPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Pemain $pemain): bool
+    public function forceDelete(User $user, Klub $pemain): bool
     {
         //
     }
