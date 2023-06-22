@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\KlubController;
+use App\Http\Controllers\api\PemainController;
+use App\Http\Controllers\API\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use PharIo\Manifest\Author;
@@ -20,4 +23,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('login', [AuthController::class, 'login']);
+Route::post('login', [RegisterController::class, 'login']);
+Route::post('register', [RegisterController::class, 'register']);
+
+Route::middleware('auth:sanctum')->get('/klub', [KlubController::class, 'index']);
+Route::middleware('auth:sanctum')->post('/klub/store', [KlubController::class, 'store']);
+
+Route::middleware('auth:sanctum')->get('/pemain', [PemainController::class, 'index']);
+Route::middleware('auth:sanctum')->post('/pemain/store', [PemainController::class, 'store']);
+Route::middleware('auth:sanctum')->post('/pemain/update', [PemainController::class, 'update']);
+Route::middleware('auth:sanctum')->post('/pemain/delete', [PemainController::class, 'delete']);
