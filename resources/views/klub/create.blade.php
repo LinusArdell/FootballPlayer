@@ -51,7 +51,7 @@
                                 @foreach ($dataNegara as $item)
 
                                 <option  value="{{ $item['id'] }}">{{ $item['nama_negara']}}
-                                        - <img style="width: 30px;height:20px;"class="" src="{{ asset('storage/bendera/'.$item->bendera) }}">
+                                        
                                 </option>
 
                                 @endforeach

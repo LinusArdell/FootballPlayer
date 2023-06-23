@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\KlubController;
+use App\Http\Controllers\API\NegaraController;
 use App\Http\Controllers\api\PemainController;
 use App\Http\Controllers\API\RegisterController;
 use Illuminate\Http\Request;
@@ -35,3 +36,8 @@ Route::middleware('auth:sanctum')->get('/pemain', [PemainController::class, 'ind
 Route::middleware('auth:sanctum')->post('/pemain/store', [PemainController::class, 'store']);
 Route::middleware('auth:sanctum')->post('/pemain/update/{id}', [PemainController::class, 'update']);
 Route::middleware('auth:sanctum')->delete('/pemain/delete/{id}', [PemainController::class, 'delete']);
+
+Route::middleware('auth:sanctum')->get('/negara', [NegaraController::class, 'index']);
+Route::middleware('auth:sanctum')->post('/negara/store', [NegaraController::class, 'store']);
+Route::middleware('auth:sanctum')->post('/negara/update/{id}', [NegaraController::class, 'update']);
+Route::middleware('auth:sanctum')->delete('/negara/delete/{id}', [NegaraController::class, 'delete']);

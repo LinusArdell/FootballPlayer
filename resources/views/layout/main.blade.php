@@ -97,7 +97,7 @@
                         <!-- Search -->
                         <!-- ============================================================== -->
                         <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark"
-                            href="javascript:void(0)"><i class="fa fa-search"></i></a>
+                            href="javascript:void(0)"></a>
                         <form class="app-search">
                             <input type="text" class="form-control" placeholder="Search &amp; enter"> <a
                                 class="srh-btn"><i class="fa fa-times"></i></a>

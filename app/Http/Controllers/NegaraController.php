@@ -81,8 +81,10 @@ class NegaraController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+       $negaras = Negara::find($id);
+       $negaras->delete();
+        return redirect()->route('negara.index')->with('success', 'Data berhasil di delete');
     }
 }

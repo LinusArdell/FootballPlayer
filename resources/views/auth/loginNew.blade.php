@@ -20,7 +20,7 @@
     <!-- This page CSS -->
   </head>
   <body style="background-image: url('asset/image/background/football.png')">
-g
+
     <div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="content-wrapper d-flex align-items-center auth">

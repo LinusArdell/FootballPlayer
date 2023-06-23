@@ -22,7 +22,6 @@ class KlubController extends Controller
 
     public function store(Request $request)
     {
-        $this->authorize('store', Klub::class);
         $validasi = $request->validate([
             'nama_klub' => 'required',
             'nama_manager' => 'required',
@@ -73,10 +72,10 @@ class KlubController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Klub $dataKlub)
+    public function destroy($id)
     {
-        $this->authorize('destroy', Klub::class);
-        $dataKlub->delete();
+       $klub = Klub::find($id);
+       $klub->delete();
         return redirect()->route('klub.index')->with('success', 'Data berhasil di delete');
     }
 }

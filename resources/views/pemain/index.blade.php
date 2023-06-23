@@ -2,7 +2,7 @@
 
 @section('Judul')
     Daftar Pemain Bola
-
+@endsection
 @section('content')
     <div class="row">
         <div class="col-lg-12 grid-margin stretch-card">
@@ -13,17 +13,13 @@
                             {{ Session::get('success') }}
                         </div>
                     @endif
-                    <div class="d-flex justify-content-between mb-3">
+                    <!-- <div class="d-flex justify-content-between mb-3">
                         <form class="col-lg-6 rounded border-info border d-flex" method="GET">
                             <input type="text" name="search" class="form-control" placeholder="">
                         </form>
-                        <div class="gap-3">
-                            <a href="{{ route('pemain.create') }}" class="btn btn-primary">Tambah</a>
-                            @if (count($dataPemain) != 0)
-                                <button class="btn btn-danger" id="multi-delete" data-route="{{ route('pemain.multi-delete') }}">Delete All Selected</button>
-                            @endif
-                        </div>
-                    </div>
+                    </div> -->
+                    <a href="{{ route('pemain.create') }}" class="mb-3 btn btn-primary">Tambah</a>
+
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>
@@ -52,7 +48,7 @@
                                         <td>
                                             <div class="btn-group">
                                             <a href="{{ route('pemain.edit', $item->id) }}"><button
-                                                        class="btn btn-success">Edit</button></a>
+                                                        class="btn btn-success mr-2">Edit</button></a>
                                             <form method="POST" class="delete-form" action="{{ route('pemain.destroy', $item->id) }}">
                                                 @method('delete')
                                                 @csrf
